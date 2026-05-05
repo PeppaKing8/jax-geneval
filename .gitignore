@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+.venv/
+checkpoints/
+runs/
+outputs/
+*.jsonl
+*.json
+!pyproject.toml
