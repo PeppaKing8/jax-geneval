@@ -13,25 +13,7 @@ expensive model forwards to JAX:
   class filtering, crop construction, NMS-style filtering, and JSONL output.
 - Parity tests against the original PyTorch/mmdetection implementation.
 
-## Status
-
-The current port matches the official PyTorch/mmdetection path closely on a
-553-image GenEval run:
-
-```text
-JAX/TPU score:      476/553 = 0.860759
-reference score:    475/553 = 0.858951
-task average:       0.861467
-```
-
-Only one image differed from the reference JSONL in that run. The detector
-logit/mask sanity check against the real checkpoint passes with small numerical
-error:
-
-```text
-class logits max diff: 5.7e-6
-mask logits max diff:  1.3e-4
-```
+## Speed
 
 On a v4-8, after the first compile, the measured detector plus device-side
 instance postprocess throughput was:
